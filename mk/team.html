@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="mk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Запознајте го стоматолошкиот тим на Dental Rhapsody. Тука сме за да ви пружиме најдобра нега." />
+    <title>Нашиот тим | Dental Rhapsody</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            50: '#f4f7f0',
+                            100: '#dce8d4',
+                            200: '#b8d1a8',
+                            300: '#8fb87e',
+                            400: '#689e55',
+                            500: '#508540',
+                            600: '#426c34',
+                            700: '#325426',
+                            800: '#233d1a',
+                            900: '#3b2a10',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-sans text-gray-800 antialiased">
+
+    <!-- ===== НАВИГАЦИЈА ===== -->
+    <header class="bg-white shadow-sm sticky top-0 z-50" x-data="{ open: false }">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center gap-2">
+                    <i class="fa-solid fa-tooth text-blue-600 text-2xl"></i>
+                    <span class="text-xl font-bold text-gray-900">Dental <span
+                            class="text-blue-600">Rhapsody</span></span>
+                </a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Почетна</a>
+                    <a href="services.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Услуги</a>
+                    <a href="team.html" class="text-blue-600 font-medium">Нашиот тим</a>
+                    <a href="contact.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Контакт</a>
+                    <a href="appointments.html"
+                        class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 font-medium transition-colors">Закажи
+                        термин</a>
+                    <div class="flex items-center gap-1 border border-gray-200 rounded-full px-3 py-1 text-sm ml-2">
+                        <a href="../team.html" class="text-gray-500 hover:text-blue-600 font-medium">EN</a>
+                        <span class="text-gray-300">|</span>
+                        <span class="font-semibold text-blue-600">МКД</span>
+                    </div>
+                </nav>
+                <button @click="open = !open" class="md:hidden p-2 text-gray-600 hover:text-blue-600"
+                    aria-label="Отвори мени">
+                    <i class="fa-solid text-xl" :class="open ? 'fa-xmark' : 'fa-bars'"></i>
+                </button>
+            </div>
+            <div x-show="open" x-transition class="md:hidden border-t border-gray-100 pb-4">
+                <nav class="flex flex-col gap-1 pt-3">
+                    <a href="index.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Почетна</a>
+                    <a href="services.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Услуги</a>
+                    <a href="team.html" class="px-4 py-2 rounded-lg font-medium bg-blue-50 text-blue-600">Нашиот тим</a>
+                    <a href="contact.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Контакт</a>
+                    <a href="appointments.html"
+                        class="mx-4 mt-2 bg-blue-600 text-white py-2 rounded-full text-center font-medium hover:bg-blue-700">Закажи
+                        термин</a>
+                    <div class="flex items-center gap-2 mx-4 mt-3 pt-3 border-t border-gray-100">
+                        <a href="../team.html" class="text-sm text-gray-500 hover:text-blue-600 font-medium">EN &mdash;
+                            English</a>
+                        <span class="text-gray-300">|</span>
+                        <span class="text-sm font-semibold text-blue-600">МКД</span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== ХЕРО ===== -->
+    <section class="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-blue-200 text-sm font-semibold uppercase tracking-widest mb-3">Луѓето зад вашата насмевка</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Запознајте го нашиот тим</h1>
+            <p class="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+                Вешти, грижливи и посветени на вашата добросостојба &mdash; нашиот тим е она што го прави Dental
+                Rhapsody навистина посебно.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== ДОКТОРИ ===== -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Нашиот стоматолог</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">Лиценцирана и постојано усовршувана со најновите техники за да
+                    ви пружи најдобра нега.</p>
+            </div>
+
+            <!-- Д-р Драгана Димитриевска -->
+            <div class="max-w-2xl mx-auto mb-20">
+                <div class="bg-blue-50 rounded-3xl overflow-hidden flex flex-col sm:flex-row gap-0">
+                    <div class="sm:w-48 bg-blue-200 flex items-center justify-center py-10 sm:py-0 flex-shrink-0">
+                        <div
+                            class="w-24 h-24 rounded-full bg-blue-400 flex items-center justify-center text-white text-4xl font-bold">
+                            ДД
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900">Д-р Драгана Димитриевска, ДДС</h3>
+                        <p class="text-blue-600 font-medium text-sm mb-3">Главен стоматолог и основач</p>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                            Д-р Димитриевска го основа Dental Rhapsody во 2026 година со единствена визија: да создаде
+                            ординација каде секој пациент се чувствува вистински згрижен. Високо обучена во семејна и
+                            козметичка стоматологија, таа донесува топлина, прецизност и вистинска страст кон секоја
+                            посета.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Општа
+                                стоматологија</span>
+                            <span
+                                class="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Козметичка
+                                стоматологија</span>
+                            <span
+                                class="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Импланти</span>
+                            <span
+                                class="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Ортодонција</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Персонал -->
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Поддржувачки тим</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">Пријателските лица кои ја прават секоја посета пријатна,
+                    удобна и добредојдена.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3 text-blue-600 font-bold text-2xl">
+                        СВ</div>
+                    <h3 class="font-semibold text-gray-900">Сара В.</h3>
+                    <p class="text-blue-600 text-sm font-medium mb-2">Главен стоматолошки хигиеничар</p>
+                    <p class="text-gray-500 text-sm">Темелно и нежно чистење за пациенти од сите возрасти со повеќе од 5
+                        години искуство.</p>
+                </div>
+
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3 text-blue-600 font-bold text-2xl">
+                        РБ</div>
+                    <h3 class="font-semibold text-gray-900">Рахела Б.</h3>
+                    <p class="text-blue-600 text-sm font-medium mb-2">Менаџер на ординација</p>
+                    <p class="text-gray-500 text-sm">Рахела гарантира дека секоја посета тече непречено и секогаш е
+                        спремна да помогне со закажување и осигурување.</p>
+                </div>
+
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow flex flex-col items-center justify-center bg-blue-50">
+                    <i class="fa-solid fa-user-plus text-blue-600 text-3xl mb-3"></i>
+                    <h3 class="font-semibold text-gray-900 mb-1">Придружи ни се!</h3>
+                    <p class="text-gray-500 text-sm mb-4 text-center">Секогаш бараме талентирани, грижливи стоматолошки
+                        стручњаци.</p>
+                    <a href="contact.html" class="text-blue-600 font-semibold text-sm hover:underline">Погледни ги
+                        отворените позиции &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="bg-blue-600 py-14 px-4">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">Подготвени да не запознаете лично?</h2>
+            <p class="text-blue-100 mb-8">Закажете термин и искусете ја разликата на Dental Rhapsody.</p>
+            <a href="appointments.html"
+                class="bg-white text-blue-700 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors">
+                Закажи термин
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== ПОДНОЖЈЕ ===== -->
+    <footer class="bg-gray-900 text-gray-400 py-14 px-4">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="fa-solid fa-tooth text-blue-400 text-2xl"></i>
+                    <span class="text-xl font-bold text-white">Dental Rhapsody</span>
+                </div>
+                <p class="mb-5 max-w-sm leading-relaxed">Бидејќи ништо не е важно&hellip; освен вашата насмевка. Осн.
+                    2026.</p>
+                <div class="flex gap-4">
+                    <a href="#" aria-label="Facebook" class="hover:text-blue-400 transition-colors"><i
+                            class="fa-brands fa-facebook text-xl"></i></a>
+                    <a href="#" aria-label="Instagram" class="hover:text-blue-400 transition-colors"><i
+                            class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" aria-label="Google" class="hover:text-blue-400 transition-colors"><i
+                            class="fa-brands fa-google text-xl"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-4">Брзи врски</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Почетна</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Услуги</a></li>
+                    <li><a href="team.html" class="hover:text-white transition-colors">Нашиот тим</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Контакт</a></li>
+                    <li><a href="appointments.html" class="hover:text-white transition-colors">Закажи термин</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-4">Контактирај не</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-blue-400 mt-0.5"></i>
+                        Јани Лукровски бр.5</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-blue-400"></i> +389
+                        (0)78/279-493</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-400"></i>
+                        contact@dentalrhapsody.com.mk</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-clock text-blue-400 mt-0.5"></i>
+                        Пон&ndash;Пет: 10&ndash;18 часот</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-600">
+            &copy; 2026 Dental Rhapsody. Сите права задржани.
+        </div>
+    </footer>
+
+</body>
+
+</html>

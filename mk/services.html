@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="mk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Откријте ги стоматолошките услуги на Dental Rhapsody — општа, козметичка, ортодонција, импланти и уште многу." />
+    <title>Услуги | Dental Rhapsody</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            50: '#f4f7f0',
+                            100: '#dce8d4',
+                            200: '#b8d1a8',
+                            300: '#8fb87e',
+                            400: '#689e55',
+                            500: '#508540',
+                            600: '#426c34',
+                            700: '#325426',
+                            800: '#233d1a',
+                            900: '#3b2a10',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-sans text-gray-800 antialiased">
+
+    <!-- ===== НАВИГАЦИЈА ===== -->
+    <header class="bg-white shadow-sm sticky top-0 z-50" x-data="{ open: false }">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center gap-2">
+                    <i class="fa-solid fa-tooth text-blue-600 text-2xl"></i>
+                    <span class="text-xl font-bold text-gray-900">Dental <span
+                            class="text-blue-600">Rhapsody</span></span>
+                </a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Почетна</a>
+                    <a href="services.html" class="text-blue-600 font-medium">Услуги</a>
+                    <a href="team.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Нашиот
+                        тим</a>
+                    <a href="contact.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Контакт</a>
+                    <a href="appointments.html"
+                        class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 font-medium transition-colors">Закажи
+                        термин</a>
+                    <div class="flex items-center gap-1 border border-gray-200 rounded-full px-3 py-1 text-sm ml-2">
+                        <a href="../services.html" class="text-gray-500 hover:text-blue-600 font-medium">EN</a>
+                        <span class="text-gray-300">|</span>
+                        <span class="font-semibold text-blue-600">МКД</span>
+                    </div>
+                </nav>
+                <button @click="open = !open" class="md:hidden p-2 text-gray-600 hover:text-blue-600"
+                    aria-label="Отвори мени">
+                    <i class="fa-solid text-xl" :class="open ? 'fa-xmark' : 'fa-bars'"></i>
+                </button>
+            </div>
+            <div x-show="open" x-transition class="md:hidden border-t border-gray-100 pb-4">
+                <nav class="flex flex-col gap-1 pt-3">
+                    <a href="index.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Почетна</a>
+                    <a href="services.html" class="px-4 py-2 rounded-lg font-medium bg-blue-50 text-blue-600">Услуги</a>
+                    <a href="team.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Нашиот
+                        тим</a>
+                    <a href="contact.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Контакт</a>
+                    <a href="appointments.html"
+                        class="mx-4 mt-2 bg-blue-600 text-white py-2 rounded-full text-center font-medium hover:bg-blue-700">Закажи
+                        термин</a>
+                    <div class="flex items-center gap-2 mx-4 mt-3 pt-3 border-t border-gray-100">
+                        <a href="../services.html" class="text-sm text-gray-500 hover:text-blue-600 font-medium">EN
+                            &mdash; English</a>
+                        <span class="text-gray-300">|</span>
+                        <span class="text-sm font-semibold text-blue-600">МКД</span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== ХЕРО ===== -->
+    <section class="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-blue-200 text-sm font-semibold uppercase tracking-widest mb-3">Што нудиме</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Нашите стоматолошки услуги</h1>
+            <p class="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+                Од вашето прво чистење до комплетна трансформација на насмевката &mdash; имаме сè што вашето семејство
+                го потребува за трајно дентално здравје.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== УСЛУГИ ===== -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+
+            <!-- Општа стоматологија -->
+            <div id="general" class="flex flex-col md:flex-row gap-8 mb-16 items-start">
+                <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-tooth text-blue-600 text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Општа стоматологија</h2>
+                    <p class="text-gray-500 leading-relaxed mb-4">Превенцијата е темел на одличното орално здравје.
+                        Нашите услуги за општа стоматологија се дизајнирани да ја одржат вашата насмевка здрава и да ги
+                        откријат проблемите навремено.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-700 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Редовни стоматолошки прегледи</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Професионално чистење на заби</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Дигитален рендген</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Пломби во боја на заб</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Лекување на болести на непцата</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Штитници за уста и ноќни штитници</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-gray-100 mb-16" />
+
+            <!-- Козметичка стоматологија -->
+            <div id="cosmetic" class="flex flex-col md:flex-row gap-8 mb-16 items-start">
+                <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-wand-magic-sparkles text-blue-600 text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Козметичка стоматологија</h2>
+                    <p class="text-gray-500 leading-relaxed mb-4">Вашата насмевка е прво нешто што луѓето го
+                        забележуваат. Нашите козметички услуги се прилагодени за да ви дадат природно убав резултат.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-700 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Порцелански фасети</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Дентално надополнување и обликување</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Трансформација на насмевката</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Обликување на непцата</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Композитни реставрации</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Козметички консултации</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-gray-100 mb-16" />
+
+            <!-- Белење на заби -->
+            <div id="whitening" class="flex flex-col md:flex-row gap-8 mb-16 items-start">
+                <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-sun text-blue-600 text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Белење на заби</h2>
+                    <p class="text-gray-500 leading-relaxed mb-4">Постигнете видливо побели заби безбедно и ефективно со
+                        нашите професионални третмани за белење — резултати кои производите од аптека едноставно не
+                        можат да ги постигнат.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-700 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Белење во ординација (1 час)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Индивидуални лади за дома</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i> Опции
+                            за осетливи заби</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Комплети за одржување</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-gray-100 mb-16" />
+
+            <!-- Ортодонција -->
+            <div id="ortho" class="flex flex-col md:flex-row gap-8 mb-16 items-start">
+                <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-teeth text-blue-600 text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Ортодонција</h2>
+                    <p class="text-gray-500 leading-relaxed mb-4">Рамните заби се поздрави и полесни за одржување.
+                        Нудиме ортодонтски решенија за деца, тинејџери и возрасни.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-700 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Метални апарати</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Керамички (прозирни) апарати</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Прозирни алинери (Invisalign)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Ретенери</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Ортодонтски консултации</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Лекување за сите возрасти</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-gray-100 mb-16" />
+
+            <!-- Дентални импланти -->
+            <div id="implants" class="flex flex-col md:flex-row gap-8 mb-16 items-start">
+                <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-screwdriver-wrench text-blue-600 text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Дентални импланти</h2>
+                    <p class="text-gray-500 leading-relaxed mb-4">Изгубените заби влијаат на вашето здравје и
+                        самодоверба. Денталните импланти се златен стандард за замена на заби &mdash; трајни, природно
+                        изгледачки и за цел живот.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-700 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Единечни импланти</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Мостови на импланти</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Протези на импланти</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Коскена надградба</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i> 3D
+                            планирање на третманот</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Консултации за импланти</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-gray-100 mb-16" />
+
+            <!-- Педијатриска стоматологија -->
+            <div id="pediatric" class="flex flex-col md:flex-row gap-8 mb-16 items-start">
+                <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-child text-blue-600 text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Педијатриска стоматологија</h2>
+                    <p class="text-gray-500 leading-relaxed mb-4">Обожаваме да им помогнеме на малите пациенти да
+                        изградат здрави навики! Нашата средина прифатлива за деца ги прави посетите забавни и без стрес.
+                    </p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-700 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i> Прва
+                            стоматолошка посета</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Чистење и прегледи за деца</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Третмани со флуор</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Дентални печатења (силанти)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Штитници за спорт</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500"></i>
+                            Едукација за орална хигиена</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-gray-100 mb-16" />
+
+            <!-- Итна помош -->
+            <div id="emergency" class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="flex-shrink-0 w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-kit-medical text-red-500 text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Итна стоматолошка помош</h2>
+                    <p class="text-gray-500 leading-relaxed mb-4">Стоматолошките итни случаи не чекаат &mdash; и ние
+                        исто така. Јавете ни за термин во ист ден. Ќе направиме сè за да ве примиме брзо и да ја
+                        ублажиме болката.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-700 text-sm mb-5">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-400"></i> Силна
+                            болка во забите</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-400"></i> Скршен
+                            или чипкан заб</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-400"></i>
+                            Испаднат заб</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-400"></i>
+                            Изгубена круна или пломба</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-400"></i> Апсцес
+                            / отекување</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-red-400"></i>
+                            Крварење на непцата</li>
+                    </ul>
+                    <a href="tel:+38978279493"
+                        class="inline-flex items-center gap-2 bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 font-semibold transition-colors">
+                        <i class="fa-solid fa-phone"></i> Јави сега: +389 (0)78/279-493
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== ОСИГУРУВАЊЕ ===== -->
+    <section class="bg-blue-50 py-12 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <i class="fa-solid fa-id-card text-blue-600 text-3xl mb-4"></i>
+            <h2 class="text-2xl font-bold text-gray-900 mb-3">Осигурување и начини на плаќање</h2>
+            <p class="text-gray-500 leading-relaxed max-w-2xl mx-auto">
+                Прифаќаме повеќето главни стоматолошки осигурувања и нудиме флексибилни планови за плаќање.
+                Контактирајте не за да го проверите вашето покритие пред посетата.
+            </p>
+            <a href="contact.html"
+                class="inline-block mt-6 bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 font-semibold transition-colors">
+                Провери го твоето осигурување
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="bg-blue-600 py-14 px-4">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">Подготвени да започнете?</h2>
+            <p class="text-blue-100 mb-8">Закажете термин денес &mdash; нови пациенти се секогаш добредојдени.</p>
+            <a href="appointments.html"
+                class="bg-white text-blue-700 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors">
+                Закажи термин
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== ПОДНОЖЈЕ ===== -->
+    <footer class="bg-gray-900 text-gray-400 py-14 px-4">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="fa-solid fa-tooth text-blue-400 text-2xl"></i>
+                    <span class="text-xl font-bold text-white">Dental Rhapsody</span>
+                </div>
+                <p class="mb-5 max-w-sm leading-relaxed">Бидејќи ништо не е важно&hellip; освен вашата насмевка. Осн.
+                    2026.</p>
+                <div class="flex gap-4">
+                    <a href="#" aria-label="Facebook" class="hover:text-blue-400 transition-colors"><i
+                            class="fa-brands fa-facebook text-xl"></i></a>
+                    <a href="#" aria-label="Instagram" class="hover:text-blue-400 transition-colors"><i
+                            class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" aria-label="Google" class="hover:text-blue-400 transition-colors"><i
+                            class="fa-brands fa-google text-xl"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-4">Брзи врски</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Почетна</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Услуги</a></li>
+                    <li><a href="team.html" class="hover:text-white transition-colors">Нашиот тим</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Контакт</a></li>
+                    <li><a href="appointments.html" class="hover:text-white transition-colors">Закажи термин</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-4">Контактирај не</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-blue-400 mt-0.5"></i>
+                        Јани Лукровски бр.5</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-blue-400"></i> +389
+                        (0)78/279-493</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-400"></i>
+                        contact@dentalrhapsody.com.mk</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-clock text-blue-400 mt-0.5"></i>
+                        Пон&ndash;Пет: 10&ndash;18 часот</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-600">
+            &copy; 2026 Dental Rhapsody. Сите права задржани.
+        </div>
+    </footer>
+
+</body>
+
+</html>
