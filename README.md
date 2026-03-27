@@ -6,18 +6,19 @@ A fully responsive, bilingual (English & Macedonian) 5-page static website for a
 
 ```
 dental-website/
+├── images/                  Team photos and other local assets
+├── mk/                      Macedonian (МКД) language version
+│   ├── index.html           Почетна (Homepage)
+│   ├── services.html        Услуги (Services)
+│   ├── team.html            Тим (Team)
+│   ├── contact.html         Контакт (Contact)
+│   └── appointments.html    Термини (Appointments)
 ├── index.html               Homepage (hero, services preview, testimonials, CTA)
 ├── services.html            Full services listing
 ├── team.html                Meet the team
 ├── contact.html             Contact form, office hours, map
 ├── appointments.html        Online booking via Calendly embed
-├── README.md                This file
-└── mk/                      Macedonian (МКД) language version
-    ├── index.html           Почетна (Homepage)
-    ├── services.html        Услуги (Services)
-    ├── team.html            Тим (Team)
-    ├── contact.html         Контакт (Contact)
-    └── appointments.html    Термини (Appointments)
+└── README.md                This file
 ```
 
 ---
@@ -114,14 +115,21 @@ In the footer of each page (both root and `mk/`), update the `href="#"` on the F
 
 The team cards currently use initials as placeholders. To add real photos:
 
-- Replace the `<div>` with initials with an `<img>` tag:
+- Replace the `<div>` with initials with an `<img>` tag.
+
+  In `team.html` (root):
 
   ```html
   <img src="images/dr-dimitrievska.jpg" alt="Dr. Dragana Dimitrievska" class="w-24 h-24 rounded-full object-cover" />
   ```
 
-- Store photos in an `images/` folder next to the HTML files.
-- Apply the same change in `mk/team.html`.
+  In `mk/team.html` (one level deeper, so path goes up one folder):
+
+  ```html
+  <img src="../images/dr-dimitrievska.jpg" alt="Dr. Dragana Dimitrievska" class="w-24 h-24 rounded-full object-cover" />
+  ```
+
+- Drop photo files into the `images/` folder at the project root.
 
 ---
 
