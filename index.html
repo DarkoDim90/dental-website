@@ -7,6 +7,15 @@
     <meta name="description"
         content="Dental Rhapsody — Nothing really matters... except your smile. Modern dental care in Skopje." />
     <title>Dental Rhapsody | Home</title>
+    <script>
+        // Default homepage language is Macedonian unless explicitly requesting English.
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            if (params.get('lang') !== 'en') {
+                window.location.replace('mk/index.html');
+            }
+        })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -131,26 +140,9 @@
                 </div>
             </div>
 
-            <!-- Right: stats -->
-            <div class="flex-shrink-0">
-                <div class="grid grid-cols-2 gap-4 w-72">
-                    <div class="bg-white/20 rounded-2xl p-5 text-center backdrop-blur">
-                        <p class="text-3xl font-extrabold">15+</p>
-                        <p class="text-blue-200 text-sm mt-1">Years of Experience</p>
-                    </div>
-                    <div class="bg-white/20 rounded-2xl p-5 text-center backdrop-blur">
-                        <p class="text-3xl font-extrabold">5k+</p>
-                        <p class="text-blue-200 text-sm mt-1">Happy Patients</p>
-                    </div>
-                    <div class="bg-white/20 rounded-2xl p-5 text-center backdrop-blur">
-                        <p class="text-3xl font-extrabold">4.9★</p>
-                        <p class="text-blue-200 text-sm mt-1">Patient Rating</p>
-                    </div>
-                    <div class="bg-white/20 rounded-2xl p-5 text-center backdrop-blur">
-                        <p class="text-3xl font-extrabold">12+</p>
-                        <p class="text-blue-200 text-sm mt-1">Services Offered</p>
-                    </div>
-                </div>
+            <!-- Right: logo -->
+            <div class="flex-shrink-0 flex items-center justify-center">
+                <img src="logo/logo.png" alt="Dental Rhapsody" class="h-48 md:h-64 w-auto drop-shadow-2xl" />
             </div>
         </div>
     </section>

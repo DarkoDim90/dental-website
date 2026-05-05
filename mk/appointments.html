@@ -32,8 +32,6 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js"></script>
-    <!-- Calendly widget CSS -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 </head>
 
 <body class="font-sans text-gray-800 antialiased">
@@ -146,22 +144,22 @@
         </div>
     </section>
 
-    <!-- ===== CALENDLY WIDGET ===== -->
+    <!-- ===== SETMORE WIDGET ===== -->
     <section class="py-16 px-4 bg-white">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-2xl font-bold text-gray-900 text-center mb-2">Изберете датум и час</h2>
             <p class="text-center text-gray-500 mb-8 text-sm">
-                Поддржано од Calendly. Не можете да најдете соодветен термин?
+                Поддржано од <a href="https://setmore.com" target="_blank" rel="noopener noreferrer"
+                    class="text-blue-600 hover:underline font-medium">Setmore</a>. Не можете да најдете
+                соодветен термин?
                 <a href="tel:+38978279493" class="text-blue-600 hover:underline font-medium">Јавете ни</a> и ќе ви
                 помогнеме.
             </p>
 
-            <!--
-        ПОСТАВУВАЊЕ: Заменете го "YOUR_USERNAME" со вашето корисничко име на Calendly.
-        Регистрирајте се на https://calendly.com → поставете го распоредот → копирајте го URL-то.
-      -->
-            <div class="calendly-inline-widget rounded-2xl overflow-hidden shadow-lg"
-                data-url="https://calendly.com/YOUR_USERNAME/appointment" style="min-width:320px;height:700px;"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
+                <iframe src="https://dentalrhapsody.setmore.com" title="Закажување термин"
+                    style="width:100%; min-width:320px; height:700px; border:0;" loading="lazy"></iframe>
+            </div>
         </div>
     </section>
 
@@ -196,8 +194,8 @@
                     </div>
                     <div>
                         <h3 class="font-bold text-gray-900 mb-1">Потсетници</h3>
-                        <p class="text-gray-500 text-sm">Ќе добиете автоматски е-маил и СМС потсетник пред вашиот
-                            термин.</p>
+                        <p class="text-gray-500 text-sm">Ќе добиете потврда и автоматски е-маил/СМС потсетници пред
+                            терминот, испратени од нашиот систем на македонски јазик.</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-2xl p-6 shadow-sm flex gap-4">
@@ -277,9 +275,6 @@
             &copy; 2026 Dental Rhapsody. Сите права задржани.
         </div>
     </footer>
-
-    <!-- Calendly widget JS -->
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
 </body>
 

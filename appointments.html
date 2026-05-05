@@ -142,35 +142,18 @@
         <div class="max-w-4xl mx-auto">
             <h2 class="text-2xl font-bold text-gray-900 text-center mb-2">Select a Date & Time</h2>
             <p class="text-gray-500 text-center mb-10">
-                Powered by <a href="https://calendly.com" target="_blank" rel="noopener noreferrer"
-                    class="text-blue-600 hover:underline">Calendly</a>.
+                Powered by <a href="https://setmore.com" target="_blank" rel="noopener noreferrer"
+                    class="text-blue-600 hover:underline">Setmore</a>.
                 Can't find a suitable time? <a href="tel:+38978279493" class="text-blue-600 hover:underline">Call us</a>
                 and we'll find one together.
             </p>
 
-            <!--
-        ============================
-        SETUP INSTRUCTIONS
-        ============================
-        1. Sign up for a FREE account at https://calendly.com
-        2. Create an "Event Type" (e.g. "New Patient Exam", "Teeth Cleaning", "Consultation")
-        3. Connect it to your Google or Outlook calendar
-        4. Copy your Calendly username (e.g. dental-rhapsody)
-        5. Replace "YOUR_USERNAME/appointment" below with your actual Calendly link
+            <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white">
+                <iframe src="https://dentalrhapsody.setmore.com" title="Book appointment"
+                    style="width:100%; min-width:320px; height:700px; border:0;" loading="lazy"></iframe>
+            </div>
 
-        Example:
-          data-url="https://calendly.com/brightsmile-dental/new-patient"
-
-        You can also create multiple event types and direct patients
-        to specific ones (cleanings, emergencies, consultations).
-        ============================
-      -->
-            <div class="calendly-inline-widget rounded-2xl overflow-hidden border border-gray-100 shadow-sm"
-                data-url="https://calendly.com/YOUR_USERNAME/appointment?hide_gdpr_banner=1&primary_color=2563eb"
-                style="min-width:320px; height:700px;"></div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-            <!-- Fallback notice if Calendly isn't set up yet -->
+            <!-- Fallback notice if online booking isn't set up yet -->
             <noscript>
                 <div class="text-center text-gray-500 py-16">
                     <i class="fa-solid fa-calendar text-blue-600 text-4xl mb-4"></i>
@@ -226,8 +209,8 @@
                         <div>
                             <h3 class="font-semibold text-gray-900 mb-1">Reminders</h3>
                             <p class="text-gray-500 text-sm leading-relaxed">
-                                You'll receive an automatic email and SMS reminder 24 hours before your appointment. You
-                                can reschedule or cancel directly from those messages.
+                                You will receive confirmation and automated reminders from our clinic system. For
+                                Macedonian-speaking patients, messages can be sent in Macedonian.
                             </p>
                         </div>
                     </div>

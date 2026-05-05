@@ -7,6 +7,8 @@ A fully responsive, bilingual (English & Macedonian) 5-page static website for a
 ```
 dental-website/
 ├── images/                  Team photos and other local assets
+├── logo/                    Brand logos
+│   └── logo.png             Logo — navbar (light bg) and footer (CSS-inverted to white)
 ├── mk/                      Macedonian (МКД) language version
 │   ├── index.html           Почетна (Homepage)
 │   ├── services.html        Услуги (Services)
@@ -17,7 +19,7 @@ dental-website/
 ├── services.html            Full services listing
 ├── team.html                Meet the team
 ├── contact.html             Contact form, office hours, map
-├── appointments.html        Online booking via Calendly embed
+├── appointments.html        Online booking via SimplyBook.me embed
 └── README.md                This file
 ```
 
@@ -30,7 +32,8 @@ dental-website/
 | [Tailwind CSS CDN](https://cdn.tailwindcss.com) | All styling | Free |
 | [Alpine.js CDN](https://alpinejs.dev) | Mobile menu toggle | Free |
 | [Font Awesome 6 CDN](https://fontawesome.com) | Icons | Free |
-| [Calendly](https://calendly.com) | Online booking widget | Free tier |
+| [Setmore](https://setmore.com) | Online booking widget | Free plan available |
+| Resend + Twilio (optional) | Custom email/SMS notifications in Macedonian | Paid/free tiers |
 | [Formspree](https://formspree.io) | Contact form backend | Free (50/mo) |
 | [GitHub Pages](https://pages.github.com) / [Netlify](https://netlify.com) | Hosting | Free |
 
@@ -81,25 +84,28 @@ If any of the above need to change, search all HTML files (both root and `mk/`) 
 
 4. Form submissions will be emailed directly to you.
 
-### 3. Set up online booking (Calendly)
+### 3. Set up online booking (Setmore)
 
-1. Sign up at **<https://calendly.com>** (free tier available)
-2. Connect your Google Calendar or Outlook
-3. Create one or more **Event Types** (e.g. "New Patient Exam", "Teeth Cleaning", "Consultation")
-4. Set your availability window in Calendly
-5. In **both** `appointments.html` and `mk/appointments.html`, replace:
+Your Setmore booking page is already live and embedded at `https://dentalrhapsody.setmore.com`.
 
-   ```html
-   data-url="https://calendly.com/YOUR_USERNAME/appointment?..."
-   ```
+To manage your booking settings:
 
-   with your real Calendly URL:
+1. Log in at **<https://setmore.com>**
+2. Configure your **Services** (e.g. Checkup, Cleaning, Consultation)
+3. Set your **Availability** (working hours, days off)
+4. Under **Apps & Integrations → Website**, Setmore also provides a floating button embed if you prefer that style
+5. If Setmore messages stay in English, use the hybrid notification service in `booking-notifications/` to send Macedonian confirmations and reminders from your own templates
 
-   ```html
-   data-url="https://calendly.com/dental-rhapsody/new-patient?hide_gdpr_banner=1&primary_color=2563eb"
-   ```
+### 3b. Send confirmations/reminders in Macedonian (hybrid mode)
 
-6. Patients who book will receive automatic confirmation + reminder emails.
+If Setmore does not allow the notification language you need, keep Setmore for booking but send notifications yourself:
+
+1. Open `booking-notifications/README.md`
+2. Configure API keys for Resend (email) and Twilio (SMS)
+3. Start webhook API (`npm start`) and reminder worker (`npm run reminders`)
+4. Add a Setmore webhook to `/webhooks/setmore`
+
+This gives full control over message language and text, including confirmations and reminder cadence.
 
 ### 4. Add your Google Maps embed
 
