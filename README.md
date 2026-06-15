@@ -19,7 +19,7 @@ dental-website/
 ├── services.html            Full services listing
 ├── team.html                Meet the team
 ├── contact.html             Contact form, office hours, map
-├── appointments.html        Online booking via SimplyBook.me embed
+├── appointments.html        Online booking via BookMe.mk embed
 └── README.md                This file
 ```
 
@@ -32,8 +32,7 @@ dental-website/
 | [Tailwind CSS CDN](https://cdn.tailwindcss.com) | All styling | Free |
 | [Alpine.js CDN](https://alpinejs.dev) | Mobile menu toggle | Free |
 | [Font Awesome 6 CDN](https://fontawesome.com) | Icons | Free |
-| [Setmore](https://setmore.com) | Online booking widget | Free plan available |
-| Resend + Twilio (optional) | Custom email/SMS notifications in Macedonian | Paid/free tiers |
+| [BookMe.mk](https://bookme.mk) | Online booking widget | — |
 | [Formspree](https://formspree.io) | Contact form backend | Free (50/mo) |
 | [GitHub Pages](https://pages.github.com) / [Netlify](https://netlify.com) | Hosting | Free |
 
@@ -59,7 +58,7 @@ The following real practice details are already in all HTML files:
 |---|---|
 | Practice name | `Dental Rhapsody` |
 | Address | `Jani Lukrovski No.5` |
-| Phone | `+389 (0)78/279-493` |
+| Phone | `+389 76/239-850` |
 | Email | `contact@dentalrhapsody.com.mk` |
 | Lead dentist | `Dr. Dragana Dimitrievska, DDS` |
 | Founded / copyright year | `2026` |
@@ -84,28 +83,16 @@ If any of the above need to change, search all HTML files (both root and `mk/`) 
 
 4. Form submissions will be emailed directly to you.
 
-### 3. Set up online booking (Setmore)
+### 3. Manage online booking (BookMe.mk)
 
-Your Setmore booking page is already live and embedded at `https://dentalrhapsody.setmore.com`.
+The booking widget on `appointments.html` (and `mk/appointments.html`) embeds `https://bookme.mk/dental-rhapsody` directly.
 
 To manage your booking settings:
 
-1. Log in at **<https://setmore.com>**
-2. Configure your **Services** (e.g. Checkup, Cleaning, Consultation)
+1. Log in at **<https://bookme.mk>**
+2. Configure your **Services** (e.g. Checkup, Filling)
 3. Set your **Availability** (working hours, days off)
-4. Under **Apps & Integrations → Website**, Setmore also provides a floating button embed if you prefer that style
-5. If Setmore messages stay in English, use the hybrid notification service in `booking-notifications/` to send Macedonian confirmations and reminders from your own templates
-
-### 3b. Send confirmations/reminders in Macedonian (hybrid mode)
-
-If Setmore does not allow the notification language you need, keep Setmore for booking but send notifications yourself:
-
-1. Open `booking-notifications/README.md`
-2. Configure API keys for Resend (email) and Twilio (SMS)
-3. Start webhook API (`npm start`) and reminder worker (`npm run reminders`)
-4. Add a Setmore webhook to `/webhooks/setmore`
-
-This gives full control over message language and text, including confirmations and reminder cadence.
+4. All confirmations and reminders are handled by BookMe.mk
 
 ### 4. Add your Google Maps embed
 
