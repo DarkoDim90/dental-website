@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Book your dental appointment online at Dental Rhapsody. Fast, easy, and available 24/7." />
-    <title>Book an Appointment | Dental Rhapsody</title>
+        content="Meet the dental team at Dental Rhapsody. We’re here to give you the best care possible." />
+    <title>Our Team | Dental Rhapsody</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -30,7 +30,7 @@
             }
         }
     </script>
-    <link rel="icon" type="image/png" href="logo/logo.png" />
+    <link rel="icon" type="image/png" href="../logo/logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js"></script>
 </head>
@@ -41,25 +41,24 @@
     <header class="bg-white shadow-sm sticky top-0 z-50" x-data="{ open: false }">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <a href="index.html?lang=en" class="flex items-center gap-2">
-                    <img src="logo/logo.png" alt="Dental Rhapsody" class="h-10 w-auto" />
+                <a href="index.html" class="flex items-center gap-2">
+                    <img src="../logo/logo.png" alt="Dental Rhapsody" class="h-10 w-auto" />
                 </a>
                 <nav class="hidden md:flex items-center gap-8">
-                    <a href="index.html?lang=en"
+                    <a href="index.html"
                         class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a>
                     <a href="services.html"
                         class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Services</a>
-                    <a href="team.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Our
-                        Team</a>
+                    <a href="team.html" class="text-blue-600 font-medium">Our Team</a>
                     <a href="contact.html"
                         class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
                     <a href="appointments.html"
-                        class="bg-blue-700 text-white px-5 py-2 rounded-full font-medium ring-2 ring-blue-400">Book
+                        class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 font-medium transition-colors">Book
                         Appointment</a>
                     <div class="flex items-center gap-1 border border-gray-200 rounded-full px-3 py-1 text-sm ml-2">
                         <span class="font-semibold text-blue-600">EN</span>
                         <span class="text-gray-300">|</span>
-                        <a href="mk/appointments.html" class="text-gray-500 hover:text-blue-600 font-medium">МКД</a>
+                        <a href="../mk/team.html" class="text-gray-500 hover:text-blue-600 font-medium">МКД</a>
                     </div>
                 </nav>
                 <button @click="open = !open" class="md:hidden p-2 text-gray-600 hover:text-blue-600"
@@ -69,13 +68,11 @@
             </div>
             <div x-show="open" x-transition class="md:hidden border-t border-gray-100 pb-4">
                 <nav class="flex flex-col gap-1 pt-3">
-                    <a href="index.html?lang=en"
+                    <a href="index.html"
                         class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home</a>
                     <a href="services.html"
                         class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Services</a>
-                    <a href="team.html"
-                        class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Our
-                        Team</a>
+                    <a href="team.html" class="px-4 py-2 rounded-lg font-medium bg-blue-50 text-blue-600">Our Team</a>
                     <a href="contact.html"
                         class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Contact</a>
                     <a href="appointments.html"
@@ -84,8 +81,8 @@
                     <div class="flex items-center gap-2 mx-4 mt-3 pt-3 border-t border-gray-100">
                         <span class="text-sm font-semibold text-blue-600">EN</span>
                         <span class="text-gray-300">|</span>
-                        <a href="mk/appointments.html" class="text-sm text-gray-500 hover:text-blue-600 font-medium">МКД
-                            &mdash; Македонски</a>
+                        <a href="../mk/team.html" class="text-sm text-gray-500 hover:text-blue-600 font-medium">МКД &mdash;
+                            Македонски</a>
                     </div>
                 </nav>
             </div>
@@ -95,119 +92,112 @@
     <!-- ===== PAGE HERO ===== -->
     <section class="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-16 px-4">
         <div class="max-w-6xl mx-auto text-center">
-            <p class="text-blue-200 text-sm font-semibold uppercase tracking-widest mb-3">Online Scheduling</p>
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Book an Appointment</h1>
-            <p class="text-blue-100 text-lg max-w-xl mx-auto leading-relaxed">
-                Schedule your visit online in minutes — available 24/7 so you can book at your convenience.
+            <p class="text-blue-200 text-sm font-semibold uppercase tracking-widest mb-3">The People Behind Your Smile
+            </p>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Meet Our Team</h1>
+            <p class="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+                Skilled, compassionate, and dedicated to your wellbeing — our team is what makes Dental Rhapsody
+                truly special.
             </p>
         </div>
     </section>
 
-    <!-- ===== BOOKING WIDGET ===== -->
-    <section class="py-16 px-4 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-gray-500 text-center mb-10">
-                Can't find a suitable time? <a href="tel:+38976239850" class="text-blue-600 hover:underline">Call us</a>
-                and we'll find one together.
-            </p>
-
-            <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white">
-                <iframe src="https://bookme.mk/dental-rhapsody" title="Book appointment"
-                    style="width:100%; min-width:320px; height:750px; border:0;" loading="lazy"
-                    allow="payment"></iframe>
+    <!-- ===== DOCTORS ===== -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Our Dentists</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">Board-certified and continually trained in the latest
+                    techniques to give you the best care possible.</p>
             </div>
 
-            <!-- Fallback notice if online booking isn't set up yet -->
-            <noscript>
-                <div class="text-center text-gray-500 py-16">
-                    <i class="fa-solid fa-calendar text-blue-600 text-4xl mb-4"></i>
-                    <p>JavaScript is required to use the online booking calendar.</p>
-                    <p>Please <a href="tel:+38976239850" class="text-blue-600 hover:underline">call us</a> to schedule
-                        your appointment.</p>
-                </div>
-            </noscript>
-        </div>
-    </section>
+            <div class="max-w-2xl mx-auto mb-20">
 
-    <!-- ===== WHAT TO EXPECT ===== -->
-    <section class="py-16 px-4 bg-blue-50">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-2xl font-bold text-gray-900 text-center mb-10">What to Expect at Your Visit</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-user-plus text-blue-600"></i>
+                <!-- Dr. Dragana Dimitrievska -->
+                <div class="bg-blue-50 rounded-3xl overflow-hidden flex flex-col sm:flex-row gap-0">
+                    <div class="sm:w-48 bg-blue-200 flex items-center justify-center py-10 sm:py-0 flex-shrink-0">
+                        <div
+                            class="w-24 h-24 rounded-full bg-blue-400 flex items-center justify-center text-white text-4xl font-bold">
+                            DD
                         </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-900 mb-1">New Patients</h3>
-                            <p class="text-gray-500 text-sm leading-relaxed">
-                                Please arrive 10–15 minutes early to complete your new patient forms. Bring a valid ID,
-                                your insurance card, and a list of any current medications.
-                            </p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900">Dr. Dragana Dimitrievska, DDS</h3>
+                        <p class="text-blue-600 font-medium text-sm mb-3">Lead Dentist &amp; Founder</p>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                            Dr. Dimitrievska founded Dental Rhapsody in 2026 with a single vision: to create a practice
+                            where every patient feels genuinely cared for. Highly trained in family and cosmetic
+                            dentistry, she brings warmth, precision, and real passion to every appointment.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">General
+                                Dentistry</span>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Cosmetic
+                                Dentistry</span>
+                            <span
+                                class="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Implants</span>
+                            <span
+                                class="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Orthodontics</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-id-card text-blue-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-900 mb-1">Insurance & Payment</h3>
-                            <p class="text-gray-500 text-sm leading-relaxed">
-                                We work with the <a href="https://fzo.org.mk/" target="_blank" rel="noopener noreferrer"
-                                    class="text-blue-600 hover:underline">Health Insurance Fund of North Macedonia</a>.
-                                Contact us to verify your coverage before your visit.
-                            </p>
-                        </div>
-                    </div>
+            </div>
+
+            <!-- Support Staff -->
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Support Staff</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">The friendly faces who make every visit smooth, comfortable,
+                    and welcoming.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3 text-blue-600 font-bold text-2xl">
+                        SW</div>
+                    <h3 class="font-semibold text-gray-900">Sarah Williams</h3>
+                    <p class="text-blue-600 text-sm font-medium mb-2">Lead Dental Hygienist</p>
+                    <p class="text-gray-500 text-sm">10+ years of experience providing thorough and gentle cleanings for
+                        patients of all ages.</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-bell text-blue-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-900 mb-1">Reminders</h3>
-                            <p class="text-gray-500 text-sm leading-relaxed">
-                                You will receive confirmation and automated reminders from our clinic system. For
-                                Macedonian-speaking patients, messages can be sent in Macedonian.
-                            </p>
-                        </div>
-                    </div>
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3 text-blue-600 font-bold text-2xl">
+                        RB</div>
+                    <h3 class="font-semibold text-gray-900">Rachel Brown</h3>
+                    <p class="text-blue-600 text-sm font-medium mb-2">Office Manager</p>
+                    <p class="text-gray-500 text-sm">Rachel ensures every visit runs smoothly and is always ready to
+                        help with scheduling, billing, and insurance questions.</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-triangle-exclamation text-red-500"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-900 mb-1">Cancellation Policy</h3>
-                            <p class="text-gray-500 text-sm leading-relaxed">
-                                Please cancel or reschedule at least 24 hours in advance so we can offer the slot to
-                                other patients. Repeated no-shows may incur a fee.
-                            </p>
-                        </div>
-                    </div>
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow flex flex-col items-center justify-center bg-blue-50">
+                    <i class="fa-solid fa-user-plus text-blue-600 text-3xl mb-3"></i>
+                    <h3 class="font-semibold text-gray-900 mb-1">Join Our Team!</h3>
+                    <p class="text-gray-500 text-sm mb-4 text-center">We're always looking for talented, caring dental
+                        professionals.</p>
+                    <a href="contact.html" class="text-blue-600 font-semibold text-sm hover:underline">View Open
+                        Positions →</a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- ===== CALL FALLBACK ===== -->
-    <section class="bg-blue-600 py-12 px-4">
+    <!-- ===== CTA ===== -->
+    <section class="bg-blue-600 py-14 px-4">
         <div class="max-w-4xl mx-auto text-center text-white">
-            <h2 class="text-2xl font-bold mb-3">Prefer to Call?</h2>
-            <p class="text-blue-100 mb-6">Our friendly team is available Mon–Fri 10am–6pm.</p>
-            <a href="tel:+38976239850"
-                class="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors">
-                <i class="fa-solid fa-phone"></i> +389(0)76/239-850
+            <h2 class="text-3xl font-bold mb-4">Ready to Meet Us in Person?</h2>
+            <p class="text-blue-100 mb-8">Book an appointment and experience the Dental Rhapsody difference for
+                yourself.
+            </p>
+            <a href="appointments.html"
+                class="bg-white text-blue-700 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors">
+                Book an Appointment
             </a>
         </div>
     </section>
@@ -236,7 +226,7 @@
             <div>
                 <h4 class="font-semibold text-white mb-4">Quick Links</h4>
                 <ul class="space-y-2">
-                    <li><a href="index.html?lang=en" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
                     <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
                     <li><a href="team.html" class="hover:text-white transition-colors">Our Team</a></li>
                     <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>

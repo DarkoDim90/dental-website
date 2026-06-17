@@ -9,17 +9,19 @@ dental-website/
 ├── images/                  Team photos and other local assets
 ├── logo/                    Brand logos
 │   └── logo.png             Logo — navbar (light bg) and footer (CSS-inverted to white)
+├── en/                      English language version
+│   ├── index.html           Homepage (hero, services preview, testimonials, CTA)
+│   ├── services.html        Full services listing
+│   ├── team.html            Meet the team
+│   ├── contact.html         Contact form, office hours, map
+│   └── appointments.html    Online booking via BookMe.mk embed
 ├── mk/                      Macedonian (МКД) language version
 │   ├── index.html           Почетна (Homepage)
 │   ├── services.html        Услуги (Services)
 │   ├── team.html            Тим (Team)
 │   ├── contact.html         Контакт (Contact)
 │   └── appointments.html    Термини (Appointments)
-├── index.html               Homepage (hero, services preview, testimonials, CTA)
-├── services.html            Full services listing
-├── team.html                Meet the team
-├── contact.html             Contact form, office hours, map
-├── appointments.html        Online booking via BookMe.mk embed
+├── index.html               Root redirect (→ mk/ by default)
 └── README.md                This file
 ```
 
@@ -34,7 +36,7 @@ dental-website/
 | [Font Awesome 6 CDN](https://fontawesome.com) | Icons | Free |
 | [BookMe.mk](https://bookme.mk) | Online booking widget | — |
 | [Formspree](https://formspree.io) | Contact form backend | Free (50/mo) |
-| [GitHub Pages](https://pages.github.com) / [Netlify](https://netlify.com) | Hosting | Free |
+| [GitHub Pages](https://pages.github.com) / | Hosting | Free |
 
 ---
 
@@ -42,8 +44,9 @@ dental-website/
 
 The site ships with a full Macedonian translation under `mk/`. Every page contains a **language switcher** in the navigation bar (top-right), letting visitors toggle between English and Macedonian.
 
-- English pages live at the project root (`index.html`, `services.html`, …)
+- English pages live under `en/` (`en/index.html`, `en/services.html`, …)
 - Macedonian pages live under `mk/` (`mk/index.html`, `mk/services.html`, …)
+- The root `index.html` is a minimal redirect that sends visitors to `mk/` by default.
 - Both language trees are structurally identical — any content or layout change should be applied to **both** sets of files.
 
 ---
@@ -69,7 +72,7 @@ If any of the above need to change, search all HTML files (both root and `mk/`) 
 
 1. Sign up at **<https://formspree.io>** (free, no credit card)
 2. Create a new form → you'll get a form ID like `xabcdefg`
-3. In **both** `contact.html` and `mk/contact.html`, replace:
+3. In **both** `en/contact.html` and `mk/contact.html`, replace:
 
    ```html
    action="https://formspree.io/f/YOUR_FORM_ID"
@@ -85,7 +88,7 @@ If any of the above need to change, search all HTML files (both root and `mk/`) 
 
 ### 3. Manage online booking (BookMe.mk)
 
-The booking widget on `appointments.html` (and `mk/appointments.html`) embeds `https://bookme.mk/dental-rhapsody` directly.
+The booking widget on `en/appointments.html` (and `mk/appointments.html`) embeds `https://bookme.mk/dental-rhapsody` directly.
 
 To manage your booking settings:
 
@@ -98,7 +101,7 @@ To manage your booking settings:
 
 1. Open **Google Maps** and search your practice address
 2. Click **Share** → **Embed a map** → Copy the `src` URL
-3. In **both** `contact.html` and `mk/contact.html`, replace the `src` in the `<iframe>` with your real URL.
+3. In **both** `en/contact.html` and `mk/contact.html`, replace the `src` in the `<iframe>` with your real URL.
 
 ### 5. Update social media links
 
@@ -110,13 +113,13 @@ The team cards currently use initials as placeholders. To add real photos:
 
 - Replace the `<div>` with initials with an `<img>` tag.
 
-  In `team.html` (root):
+  In `en/team.html`:
 
   ```html
-  <img src="images/dr-dimitrievska.jpg" alt="Dr. Dragana Dimitrievska" class="w-24 h-24 rounded-full object-cover" />
+  <img src="../images/dr-dimitrievska.jpg" alt="Dr. Dragana Dimitrievska" class="w-24 h-24 rounded-full object-cover" />
   ```
 
-  In `mk/team.html` (one level deeper, so path goes up one folder):
+  In `mk/team.html`:
 
   ```html
   <img src="../images/dr-dimitrievska.jpg" alt="Dr. Dragana Dimitrievska" class="w-24 h-24 rounded-full object-cover" />
@@ -148,9 +151,9 @@ The team cards currently use initials as placeholders. To add real photos:
 
 ## Maintenance Tips
 
-- **To edit text**: Open the relevant `.html` file in any text editor and change the content. Remember to apply the same change to the `mk/` counterpart.
-- **To add a new service**: Copy an existing service block in `services.html` and paste/modify it. Do the same in `mk/services.html`.
-- **To add a team member**: Copy a team card block in `team.html` and update it. Do the same in `mk/team.html`.
+- **To edit text**: Open the relevant `.html` file in any text editor and change the content. Remember to apply the same change to the counterpart in the other language folder.
+- **To add a new service**: Copy an existing service block in `en/services.html` and paste/modify it. Do the same in `mk/services.html`.
+- **To add a team member**: Copy a team card block in `en/team.html` and update it. Do the same in `mk/team.html`.
 - **Re-deploy after edits**: On GitHub Pages, commit the changed file. On Netlify, drag the folder again or use Netlify's Git integration for automatic deploys.
 
 ---
