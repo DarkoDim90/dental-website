@@ -1,4 +1,4 @@
-# Dental Rhapsody — Static Website
+# Dental Rhapsody — Static Dental Website
 
 A fully responsive, bilingual (English & Macedonian) 5-page static website for a dental office. No build tools or backend required.
 
