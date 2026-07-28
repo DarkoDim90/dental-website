@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Gallery — tour our modern dental office and see real patient smile transformations at Dental Rhapsody, Skopje." />
+    <title>Gallery | Dental Rhapsody</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            50: '#f4f7f0',
+                            100: '#dce8d4',
+                            200: '#b8d1a8',
+                            300: '#8fb87e',
+                            400: '#689e55',
+                            500: '#508540',
+                            600: '#426c34',
+                            700: '#325426',
+                            800: '#233d1a',
+                            900: '#3b2a10',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../logo/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../logo/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="../logo/favicon-192.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js"></script>
+
+    <style>
+        /* Prevent body scroll when lightbox is open */
+        body.lightbox-open {
+            overflow: hidden;
+        }
+
+        /* Before/after slider — disable image drag */
+        .ba-slider img {
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .ba-slider {
+            touch-action: none;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 antialiased">
+
+    <!-- ===== NAVIGATION ===== -->
+    <header class="bg-white shadow-sm sticky top-0 z-50" x-data="{ open: false }">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+
+                <a href="index.html" class="flex items-center gap-2">
+                    <img src="../logo/logo.png" alt="Dental Rhapsody" class="h-10 w-auto" />
+                </a>
+
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+                    <a href="services.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Services</a>
+                    <a href="gallery.html" class="text-blue-600 font-medium">Gallery</a>
+                    <a href="team.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Our
+                        Team</a>
+                    <a href="contact.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
+                    <a href="appointments.html"
+                        class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 font-medium transition-colors">Book
+                        Appointment</a>
+                    <div class="flex items-center gap-1 border border-gray-200 rounded-full px-3 py-1 text-sm ml-2">
+                        <span class="font-semibold text-blue-600">EN</span>
+                        <span class="text-gray-300">|</span>
+                        <a href="../mk/gallery.html" class="text-gray-500 hover:text-blue-600 font-medium">МКД</a>
+                    </div>
+                </nav>
+
+                <button @click="open = !open" class="md:hidden p-2 text-gray-600 hover:text-blue-600"
+                    aria-label="Toggle menu">
+                    <i class="fa-solid text-xl" :class="open ? 'fa-xmark' : 'fa-bars'"></i>
+                </button>
+            </div>
+
+            <div x-show="open" x-transition class="md:hidden border-t border-gray-100 pb-4">
+                <nav class="flex flex-col gap-1 pt-3">
+                    <a href="index.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home</a>
+                    <a href="services.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Services</a>
+                    <a href="gallery.html" class="px-4 py-2 rounded-lg font-medium bg-blue-50 text-blue-600">Gallery</a>
+                    <a href="team.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Our
+                        Team</a>
+                    <a href="contact.html"
+                        class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600">Contact</a>
+                    <a href="appointments.html"
+                        class="mx-4 mt-2 bg-blue-600 text-white py-2 rounded-full text-center font-medium hover:bg-blue-700">Book
+                        Appointment</a>
+                    <div class="flex items-center gap-2 mx-4 mt-3 pt-3 border-t border-gray-100">
+                        <span class="text-sm font-semibold text-blue-600">EN</span>
+                        <span class="text-gray-300">|</span>
+                        <a href="../mk/gallery.html" class="text-sm text-gray-500 hover:text-blue-600 font-medium">МКД
+                            &mdash; Македонски</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-blue-200 text-sm font-semibold uppercase tracking-widest mb-3">See for Yourself</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Our Space &amp; Results</h1>
+            <p class="text-blue-100 text-lg max-w-2xl mx-auto">
+                Take a look around our modern clinic and discover real smile transformations from our patients.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== TABS + CONTENT ===== -->
+    <div x-data="galleryPage()" x-init="init()" @keydown.escape.window="closeLightbox()"
+        class="min-h-screen bg-gray-50">
+
+        <!-- Tab bar -->
+        <div class="bg-white border-b border-gray-200 sticky top-16 z-40">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center gap-2">
+                <button @click="tab = 'office'" :class="tab === 'office'
+                        ? 'border-b-2 border-blue-600 text-blue-600 font-semibold'
+                        : 'text-gray-500 hover:text-blue-600 font-medium'"
+                    class="px-10 py-5 text-xl transition-colors">
+                    <i class="fa-solid fa-images mr-2"></i>Our Office
+                </button>
+                <button @click="tab = 'results'" :class="tab === 'results'
+                        ? 'border-b-2 border-blue-600 text-blue-600 font-semibold'
+                        : 'text-gray-500 hover:text-blue-600 font-medium'"
+                    class="px-10 py-5 text-xl transition-colors">
+                    <i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Before &amp; After
+                </button>
+            </div>
+        </div>
+
+        <!-- ── OFFICE TAB ── -->
+        <section x-show="tab === 'office'" x-transition.opacity class="py-14 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">A Space Designed for Your Comfort</h2>
+                    <p class="text-gray-500 max-w-xl mx-auto">
+                        From the welcoming reception to our state-of-the-art treatment rooms, every corner of Dental
+                        Rhapsody is built around your wellbeing.
+                    </p>
+                </div>
+
+                <!-- Photo grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <template x-for="(photo, i) in officePhotos" :key="i">
+                        <button @click="openLightbox(officePhotos, i)"
+                            class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <img :src="photo.src" :alt="photo.caption"
+                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                            <div
+                                class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-end">
+                                <span
+                                    class="w-full text-white text-sm font-medium px-4 py-3 translate-y-full group-hover:translate-y-0 transition-transform duration-200"
+                                    x-text="photo.caption"></span>
+                            </div>
+                        </button>
+                    </template>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── BEFORE & AFTER TAB ── -->
+        <section x-show="tab === 'results'" x-transition.opacity class="py-14 px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Real Results, Real Smiles</h2>
+                    <p class="text-gray-500 max-w-xl mx-auto">
+                        Drag the handle left and right to reveal the transformation.
+                        All photos shared with full patient consent.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <template x-for="(item, i) in beforeAfterCases" :key="i">
+                        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                            <!-- Drag-to-reveal slider -->
+                            <div class="ba-slider relative select-none overflow-hidden" style="aspect-ratio: 4/3;"
+                                x-data="baSlider()" @mousedown.prevent="start($event)" @mousemove.prevent="move($event)"
+                                @mouseup="stop()" @mouseleave="stop()" @touchstart.prevent="start($event.touches[0])"
+                                @touchmove.prevent="move($event.touches[0])" @touchend="stop()">
+                                <!-- BEFORE (bottom layer — full width) -->
+                                <img :src="item.before" :alt="'Before — ' + item.title"
+                                    class="absolute inset-0 w-full h-full object-cover" />
+
+                                <!-- AFTER (top layer — clipped to show left portion) -->
+                                <div class="absolute inset-0 overflow-hidden"
+                                    :style="`clip-path: inset(0 ${100 - pos}% 0 0)`">
+                                    <img :src="item.after" :alt="'After — ' + item.title"
+                                        class="absolute inset-0 w-full h-full object-cover" />
+                                </div>
+
+                                <!-- Divider line -->
+                                <div class="absolute top-0 bottom-0 w-px bg-white shadow-[0_0_6px_rgba(0,0,0,0.4)] pointer-events-none"
+                                    :style="`left: ${pos}%`">
+                                    <!-- Handle -->
+                                    <div
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize">
+                                        <i class="fa-solid fa-arrows-left-right text-blue-600 text-xs"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Labels -->
+                                <span
+                                    class="absolute bottom-3 left-3 bg-black/50 text-white text-xs font-semibold px-2.5 py-1 rounded-full pointer-events-none">Before</span>
+                                <span
+                                    class="absolute bottom-3 right-3 bg-blue-600/80 text-white text-xs font-semibold px-2.5 py-1 rounded-full pointer-events-none">After</span>
+                            </div>
+
+                            <!-- Case info -->
+                            <div class="px-5 py-4">
+                                <h3 class="font-semibold text-gray-900 mb-1" x-text="item.title"></h3>
+                                <p class="text-gray-500 text-sm" x-text="item.description"></p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <p class="text-center text-gray-400 text-xs mt-10">
+                    <i class="fa-solid fa-shield-halved mr-1"></i>
+                    All patient images are published with written consent. Individual results may vary.
+                </p>
+            </div>
+        </section>
+
+        <!-- ── LIGHTBOX ── -->
+        <div x-show="lightbox.open" x-transition.opacity
+            class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" @click.self="closeLightbox()"
+            style="display: none;">
+            <!-- Close -->
+            <button @click="closeLightbox()" class="absolute top-4 right-4 text-white/80 hover:text-white text-2xl p-2"
+                aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+
+            <!-- Prev -->
+            <button @click="lightboxPrev()" x-show="lightbox.photos.length > 1"
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-3xl p-3"
+                aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+
+            <!-- Image -->
+            <img :src="lightbox.photos[lightbox.index]?.src" :alt="lightbox.photos[lightbox.index]?.caption"
+                class="max-h-[85vh] max-w-full rounded-xl shadow-2xl object-contain" />
+
+            <!-- Next -->
+            <button @click="lightboxNext()" x-show="lightbox.photos.length > 1"
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-3xl p-3"
+                aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+
+            <!-- Caption -->
+            <div class="absolute bottom-6 left-0 right-0 text-center text-white/80 text-sm">
+                <span x-text="lightbox.photos[lightbox.index]?.caption"></span>
+                <span class="ml-3 text-white/40 text-xs"
+                    x-text="`${lightbox.index + 1} / ${lightbox.photos.length}`"></span>
+            </div>
+        </div>
+
+    </div><!-- end x-data="galleryPage()" -->
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="bg-blue-600 py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Love what you see?</h2>
+            <p class="text-blue-100 text-lg mb-8">Book a consultation and start your own transformation today.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="appointments.html"
+                    class="bg-white text-blue-700 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors">
+                    Book an Appointment
+                </a>
+                <a href="tel:+38976239850"
+                    class="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-blue-700 transition-colors">
+                    <i class="fa-solid fa-phone mr-2"></i>+389(0)76/239-850
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-900 text-gray-400 py-14 px-4">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="fa-solid fa-tooth text-blue-400 text-2xl"></i>
+                    <span class="text-xl font-bold text-white">Dental Rhapsody</span>
+                </div>
+                <p class="mb-5 max-w-sm leading-relaxed">Where nothing really matters&hellip; except your smile. Est.
+                    2026.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/DentalRhapsody" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook" class="hover:text-blue-400 transition-colors"><i
+                            class="fa-brands fa-facebook text-xl"></i></a>
+                    <a href="https://www.instagram.com/dental_rhapsody" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram" class="hover:text-blue-400 transition-colors"><i
+                            class="fa-brands fa-instagram text-xl"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+                    <li><a href="gallery.html" class="hover:text-white transition-colors">Gallery</a></li>
+                    <li><a href="team.html" class="hover:text-white transition-colors">Our Team</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    <li><a href="appointments.html" class="hover:text-white transition-colors">Book Appointment</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-4">Contact Us</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-blue-400 mt-0.5"></i>
+                        <a href="https://maps.app.goo.gl/fovFgtws8HSqGwtJA" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-white transition-colors">Jani Lukrovski No.5, Unit 7</a>
+                    </li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-blue-400"></i>
+                        +389(0)76/239-850</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-400"></i>
+                        dentalrhapsody@outlook.com</li>
+                    <li class="inline-flex items-center gap-2"><i class="fa-solid fa-clock text-blue-400 mt-0.5"></i>
+                        <span>Mon, Thu, Fri: 7am&ndash;3pm<br>Tue, Wed: 12pm&ndash;8pm</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-600">
+            &copy; 2026 Dental Rhapsody. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function galleryPage() {
+            return {
+                tab: 'office',
+
+                // ── Office photos ──────────────────────────────────────────────────
+                // Replace src values with real paths once photos are ready,
+                // e.g. src: '../images/office/reception.jpg'
+                officePhotos: [
+                    {
+                        src: 'https://placehold.co/800x600/dce8d4/325426?text=Reception',
+                        caption: 'Reception & Waiting Area'
+                    },
+                    {
+                        src: 'https://placehold.co/800x600/b8d1a8/233d1a?text=Treatment+Room+1',
+                        caption: 'Treatment Room 1'
+                    },
+                    {
+                        src: 'https://placehold.co/800x600/dce8d4/325426?text=Treatment+Room+2',
+                        caption: 'Treatment Room 2'
+                    },
+                    {
+                        src: 'https://placehold.co/800x600/b8d1a8/233d1a?text=Sterilisation+Room',
+                        caption: 'Sterilisation Room'
+                    },
+                    {
+                        src: 'https://placehold.co/800x600/dce8d4/325426?text=X-Ray+Room',
+                        caption: 'Digital X-Ray Room'
+                    },
+                    {
+                        src: 'https://placehold.co/800x600/b8d1a8/233d1a?text=Entrance',
+                        caption: 'Clinic Entrance'
+                    },
+                ],
+
+                // ── Before / After cases ───────────────────────────────────────────
+                // For real photos use matching-size images, e.g.:
+                // before: '../images/before-after/case-01-before.jpg'
+                // after:  '../images/before-after/case-01-after.jpg'
+                beforeAfterCases: [
+                    {
+                        title: 'Smile Makeover — Veneers',
+                        description: 'Full porcelain veneer set restoring shape, length, and colour.',
+                        before: 'https://placehold.co/800x600/f0e6d0/7a5c28?text=Before',
+                        after: 'https://placehold.co/800x600/d4e8d4/2d5a2d?text=After',
+                    },
+                    {
+                        title: 'Teeth Whitening',
+                        description: 'Single in-office professional whitening session.',
+                        before: 'https://placehold.co/800x600/ede8d8/6b5830?text=Before',
+                        after: 'https://placehold.co/800x600/eaf4ea/2e6b2e?text=After',
+                    },
+                    {
+                        title: 'Composite Bonding',
+                        description: 'Chipped front teeth restored with tooth-coloured composite resin.',
+                        before: 'https://placehold.co/800x600/f0e6d0/7a5c28?text=Before',
+                        after: 'https://placehold.co/800x600/d4e8d4/2d5a2d?text=After',
+                    },
+                    {
+                        title: 'Implant Crown',
+                        description: 'Single missing tooth replaced with a titanium implant and ceramic crown.',
+                        before: 'https://placehold.co/800x600/ede8d8/6b5830?text=Before',
+                        after: 'https://placehold.co/800x600/eaf4ea/2e6b2e?text=After',
+                    },
+                ],
+
+                // ── Lightbox state ────────────────────────────────────────────────
+                lightbox: { open: false, photos: [], index: 0 },
+
+                init() {
+                    // keyboard prev/next
+                    document.addEventListener('keydown', (e) => {
+                        if (!this.lightbox.open) return;
+                        if (e.key === 'ArrowRight') this.lightboxNext();
+                        if (e.key === 'ArrowLeft') this.lightboxPrev();
+                    });
+                },
+
+                openLightbox(photos, index) {
+                    this.lightbox = { open: true, photos, index };
+                    document.body.classList.add('lightbox-open');
+                },
+                closeLightbox() {
+                    this.lightbox.open = false;
+                    document.body.classList.remove('lightbox-open');
+                },
+                lightboxNext() {
+                    this.lightbox.index = (this.lightbox.index + 1) % this.lightbox.photos.length;
+                },
+                lightboxPrev() {
+                    this.lightbox.index = (this.lightbox.index - 1 + this.lightbox.photos.length) % this.lightbox.photos.length;
+                },
+            };
+        }
+
+        // Self-contained Alpine component for each before/after slider
+        function baSlider() {
+            return {
+                pos: 50,
+                dragging: false,
+                start(e) {
+                    this.dragging = true;
+                    this.update(e);
+                },
+                move(e) {
+                    if (this.dragging) this.update(e);
+                },
+                stop() {
+                    this.dragging = false;
+                },
+                update(e) {
+                    const rect = this.$el.getBoundingClientRect();
+                    const clientX = (e.clientX !== undefined) ? e.clientX : e.pageX;
+                    this.pos = Math.min(100, Math.max(0, ((clientX - rect.left) / rect.width) * 100));
+                }
+            };
+        }
+    </script>
+
+</body>
+
+</html>
