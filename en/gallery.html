@@ -43,7 +43,7 @@
             overflow: hidden;
         }
 
-        /* Before/after slider — disable image drag */
+        /* Before/after slider — disabled until patient photos are available
         .ba-slider img {
             pointer-events: none;
             user-select: none;
@@ -53,6 +53,7 @@
         .ba-slider {
             touch-action: none;
         }
+        */
     </style>
 </head>
 
@@ -143,12 +144,14 @@
                     class="px-10 py-5 text-xl transition-colors">
                     <i class="fa-solid fa-images mr-2"></i>Our Office
                 </button>
+                <!-- Before & After tab — commented out until patient photos are available
                 <button @click="tab = 'results'" :class="tab === 'results'
                         ? 'border-b-2 border-blue-600 text-blue-600 font-semibold'
                         : 'text-gray-500 hover:text-blue-600 font-medium'"
                     class="px-10 py-5 text-xl transition-colors">
                     <i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Before &amp; After
                 </button>
+                -->
             </div>
         </div>
 
@@ -182,68 +185,71 @@
             </div>
         </section>
 
-        <!-- ── BEFORE & AFTER TAB ── -->
-        <section x-show="tab === 'results'" x-transition.opacity class="py-14 px-4">
-            <div class="max-w-5xl mx-auto">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Real Results, Real Smiles</h2>
-                    <p class="text-gray-500 max-w-xl mx-auto">
-                        Drag the handle left and right to reveal the transformation.
-                        All photos shared with full patient consent.
+        <!-- ── BEFORE & AFTER TAB — commented out until patient photos are available ── -->
+        <template>
+            <section x-show="tab === 'results'" x-transition.opacity class="py-14 px-4">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-3">Real Results, Real Smiles</h2>
+                        <p class="text-gray-500 max-w-xl mx-auto">
+                            Drag the handle left and right to reveal the transformation.
+                            All photos shared with full patient consent.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <template x-for="(item, i) in beforeAfterCases" :key="i">
+                            <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                                <!-- Drag-to-reveal slider -->
+                                <div class="ba-slider relative select-none overflow-hidden" style="aspect-ratio: 4/3;"
+                                    x-data="baSlider()" @mousedown.prevent="start($event)"
+                                    @mousemove.prevent="move($event)" @mouseup="stop()" @mouseleave="stop()"
+                                    @touchstart.prevent="start($event.touches[0])"
+                                    @touchmove.prevent="move($event.touches[0])" @touchend="stop()">
+                                    <!-- BEFORE (bottom layer — full width) -->
+                                    <img :src="item.before" :alt="'Before — ' + item.title"
+                                        class="absolute inset-0 w-full h-full object-cover" />
+
+                                    <!-- AFTER (top layer — clipped to show left portion) -->
+                                    <div class="absolute inset-0 overflow-hidden"
+                                        :style="`clip-path: inset(0 ${100 - pos}% 0 0)`">
+                                        <img :src="item.after" :alt="'After — ' + item.title"
+                                            class="absolute inset-0 w-full h-full object-cover" />
+                                    </div>
+
+                                    <!-- Divider line -->
+                                    <div class="absolute top-0 bottom-0 w-px bg-white shadow-[0_0_6px_rgba(0,0,0,0.4)] pointer-events-none"
+                                        :style="`left: ${pos}%`">
+                                        <!-- Handle -->
+                                        <div
+                                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize">
+                                            <i class="fa-solid fa-arrows-left-right text-blue-600 text-xs"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- Labels -->
+                                    <span
+                                        class="absolute bottom-3 left-3 bg-black/50 text-white text-xs font-semibold px-2.5 py-1 rounded-full pointer-events-none">Before</span>
+                                    <span
+                                        class="absolute bottom-3 right-3 bg-blue-600/80 text-white text-xs font-semibold px-2.5 py-1 rounded-full pointer-events-none">After</span>
+                                </div>
+
+                                <!-- Case info -->
+                                <div class="px-5 py-4">
+                                    <h3 class="font-semibold text-gray-900 mb-1" x-text="item.title"></h3>
+                                    <p class="text-gray-500 text-sm" x-text="item.description"></p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <p class="text-center text-gray-400 text-xs mt-10">
+                        <i class="fa-solid fa-shield-halved mr-1"></i>
+                        All patient images are published with written consent. Individual results may vary.
                     </p>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <template x-for="(item, i) in beforeAfterCases" :key="i">
-                        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
-                            <!-- Drag-to-reveal slider -->
-                            <div class="ba-slider relative select-none overflow-hidden" style="aspect-ratio: 4/3;"
-                                x-data="baSlider()" @mousedown.prevent="start($event)" @mousemove.prevent="move($event)"
-                                @mouseup="stop()" @mouseleave="stop()" @touchstart.prevent="start($event.touches[0])"
-                                @touchmove.prevent="move($event.touches[0])" @touchend="stop()">
-                                <!-- BEFORE (bottom layer — full width) -->
-                                <img :src="item.before" :alt="'Before — ' + item.title"
-                                    class="absolute inset-0 w-full h-full object-cover" />
-
-                                <!-- AFTER (top layer — clipped to show left portion) -->
-                                <div class="absolute inset-0 overflow-hidden"
-                                    :style="`clip-path: inset(0 ${100 - pos}% 0 0)`">
-                                    <img :src="item.after" :alt="'After — ' + item.title"
-                                        class="absolute inset-0 w-full h-full object-cover" />
-                                </div>
-
-                                <!-- Divider line -->
-                                <div class="absolute top-0 bottom-0 w-px bg-white shadow-[0_0_6px_rgba(0,0,0,0.4)] pointer-events-none"
-                                    :style="`left: ${pos}%`">
-                                    <!-- Handle -->
-                                    <div
-                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize">
-                                        <i class="fa-solid fa-arrows-left-right text-blue-600 text-xs"></i>
-                                    </div>
-                                </div>
-
-                                <!-- Labels -->
-                                <span
-                                    class="absolute bottom-3 left-3 bg-black/50 text-white text-xs font-semibold px-2.5 py-1 rounded-full pointer-events-none">Before</span>
-                                <span
-                                    class="absolute bottom-3 right-3 bg-blue-600/80 text-white text-xs font-semibold px-2.5 py-1 rounded-full pointer-events-none">After</span>
-                            </div>
-
-                            <!-- Case info -->
-                            <div class="px-5 py-4">
-                                <h3 class="font-semibold text-gray-900 mb-1" x-text="item.title"></h3>
-                                <p class="text-gray-500 text-sm" x-text="item.description"></p>
-                            </div>
-                        </div>
-                    </template>
-                </div>
-
-                <p class="text-center text-gray-400 text-xs mt-10">
-                    <i class="fa-solid fa-shield-halved mr-1"></i>
-                    All patient images are published with written consent. Individual results may vary.
-                </p>
-            </div>
-        </section>
+            </section>
+        </template>
 
         <!-- ── LIGHTBOX ── -->
         <div x-show="lightbox.open" x-transition.opacity
@@ -382,7 +388,7 @@
                     },
                 ],
 
-                // ── Before / After cases ───────────────────────────────────────────
+                /* Before / After cases — commented out until patient photos are available
                 // For real photos use matching-size images, e.g.:
                 // before: '../images/before-after/case-01-before.jpg'
                 // after:  '../images/before-after/case-01-after.jpg'
@@ -412,6 +418,7 @@
                         after: 'https://placehold.co/800x600/eaf4ea/2e6b2e?text=After',
                     },
                 ],
+                */
 
                 // ── Lightbox state ────────────────────────────────────────────────
                 lightbox: { open: false, photos: [], index: 0 },
@@ -442,7 +449,7 @@
             };
         }
 
-        // Self-contained Alpine component for each before/after slider
+        /* Before/after slider component — commented out until patient photos are available
         function baSlider() {
             return {
                 pos: 50,
@@ -464,6 +471,7 @@
                 }
             };
         }
+        */
     </script>
 
 </body>
