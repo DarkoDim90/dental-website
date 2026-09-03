@@ -202,13 +202,14 @@
                                 <!-- ПОТОА (долен слој — целосна ширина) -->
                                 <img :src="item.after" :alt="'Потоа — ' + item.title"
                                     class="absolute inset-0 w-full h-full object-cover"
-                                    style="transform: translate(-15px, -25px) scale(1.24); transform-origin: center center;" />
+                                    style="transform: translate(-15px, -25px) scale(1.08); transform-origin: center center;" />
 
                                 <!-- ПРЕД (горен слој — исечен за да прикажува лев дел) -->
                                 <div class="absolute inset-0 overflow-hidden"
                                     :style="`clip-path: inset(0 ${100 - pos}% 0 0)`">
                                     <img :src="item.before" :alt="'Пред — ' + item.title"
-                                        class="absolute inset-0 w-full h-full object-cover" />
+                                        class="absolute inset-0 w-full h-full object-cover"
+                                        style="transform: translateY(18px) scale(1.28); transform-origin: center center;" />
                                 </div>
 
                                 <!-- Линија-делител -->
